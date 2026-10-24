@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "app-rostros",
+    "name": "Reconocimiento de rostros",
     "slug": "app-rostros",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -10,15 +10,42 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.matyduocuc.approstros",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-status-bar",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "La app usa la camara para tomar la foto de la persona.",
+          "photosPermission": "La app usa la galeria para elegir la foto de la persona."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "bd52d8cc-6632-4aa6-86f9-831c69b94107"
+      }
     }
   }
 }
